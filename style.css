@@ -22,12 +22,13 @@ body {
 
 .main {
     width: 70%;
-    height: 300px;
+    height: auto;
     margin: 0 auto;
     border-radius: 10px;
     background-color: white;
     color: black;
     display: flex;
+    padding-bottom: 20px;
 }
 
 .container__left, .container__rigth, .form {
@@ -39,6 +40,11 @@ body {
 
 .container__left h2 {
     margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.container__rigth h2 {
+    padding-top: 20px;
 }
 
 .container__left, .container__rigth {
@@ -121,5 +127,29 @@ label span {
     margin: 0 4px 0 3px;
 }
 
+.mostrar-gasto {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 40px;
+    width: 70%;
+    border: 1px solid #dadce0;
+    border-radius: 10px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+}
 
+.mostrar-gasto__elemento {
+    font-weight: bold;
+}
+
+.mostrar-gasto__valor {
+    background-color: #0070ff;
+    border-radius: 10px;
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
 

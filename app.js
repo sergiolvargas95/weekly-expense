@@ -1,5 +1,5 @@
 let presupuesto = prompt('Ingreso tu presupuesto semanal');
-let cambio = presupuesto
+let cambio = presupuesto;
 document.getElementById("valor-presupuesto").innerHTML = presupuesto;
 document.getElementById("valor-restante").innerHTML = presupuesto;   //Cambiar elementos en el HTML
 
@@ -8,29 +8,50 @@ button.addEventListener('click', getInfo =() => {  //esta pendiendo cuando ocurr
     const gastos = document.getElementById('gastos').value;
     const cantidad = document.getElementById('cantidad').value;
     const listaDeGastos = {gastos, cantidad};
-    mostrarGasto(listaDeGastos);
-    cambioPresupuesto(listaDeGastos);
+    let resultadoCambio = cambioPresupuesto(listaDeGastos);
+    mostrarGasto(listaDeGastos, resultadoCambio);
 });
 
-const mostrarGasto = (listaDeGastos) => {
-    console.log(listaDeGastos)
+const mostrarGasto = (listaDeGastos, resultadoCambio) => {
+    if(resultadoCambio <= 0){
+        console.log("No puedes hacer ese gasto.")
+    }else{
+        const $div = document.createElement('div'),
+        $span = document.createElement('span'),
+        $span2 = document.createElement('span'),
+        $elementoGasto = document.createTextNode(listaDeGastos.gastos),
+        $elementoValor = document.createTextNode(listaDeGastos.cantidad),
+        $bloques = document.querySelector(".container__rigth");
+
+        $div.classList.add("mostrar-gasto");
+        $span.classList.add("mostrar-gasto__elemento");
+        $span2.classList.add("mostrar-gasto__valor");
+
+
+        $span.appendChild($elementoGasto);
+        $span2.appendChild($elementoValor);
+        $div.appendChild($span);
+        $div.appendChild($span2);
+        $bloques.appendChild($div);
+    }
 }
 
 const cambioPresupuesto = ({ cantidad }) => {
     cambio = cambio - cantidad;
     if (cambio <= 0) {
-        cambio = 0;
-        document.getElementById("valor-restante").innerHTML = cambio.toString();
+        //cambio = 0;
+        //document.getElementById("valor-restante").innerHTML = cambio.toString();
+        alert("No puedes hacer este gasto")
     }else{
         document.getElementById("valor-restante").innerHTML = cambio.toString();
+        colorPorcentaje(cambio);
     }
-    colorPorcentaje(cambio)
+    return cambio;
 }
 
 const colorPorcentaje = (cambio) => {
     let presupuesto_50 = (presupuesto / 100) * 50;
     let presupuesto_75 = (presupuesto / 100) * 25;
-    console.log(presupuesto_75)
     let restante = document.getElementById('restante-container');
 
     if (cambio < presupuesto_50 && cambio > presupuesto_75){
