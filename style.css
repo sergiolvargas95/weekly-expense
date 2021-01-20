@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 65.2%;
+    background: rgb(101,125,198);
+    background: linear-gradient(90deg, rgba(101,125,198,1) 0%, rgba(9,9,121,1) 48%);
+    font-family: 'Dosis', sans-serif;
+}
+
+.Title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+    color:white;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.main {
+    width: 70%;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    display: flex;
+}
+
+.container__left, .container__rigth, .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__left h2 {
+    margin-bottom: 10px;
+}
+
+.container__left, .container__rigth {
+    width: 50%;
+}
+
+.container__left form {
+    width: 100%;
+    padding: 10px 0 20px 0;
+    height: 100px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 30px;
+    justify-content: left;
+    align-items: left;
+    margin: 15px
+}
+
+label span {
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 5px
+}
+
+.input-gastos, .input-cantidad {
+    width: 90%;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #dadce0;
+}
+
+.boton{
+    margin: 40px 0 20px 60px;
+    align-self: start;
+    background-color: #0070ff;
+    color: white;
+    border: none;
+    height: 30px;
+    width: 70px;
+    border-radius: 10px;
+    cursor:pointer;
+    outline: none;
+}
+
+.container__rigth h2 {
+    margin-bottom: 30px;
+}
+
+.presupuesto, .restante {
+    height: 40px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 0.7rem;
+    border-radius: 10px;
+}
+
+.presupuesto {
+    margin-bottom: 20px;
+    background-color: #c5e1fe;
+}
+
+.restante {
+    margin-bottom: 50px;
+    background-color:#ceead7;
+}
+
+.subtitle {
+    font-weight: bold;
+}
+
+.moneda {
+    margin: 0 4px 0 3px;
+}
+
+
+

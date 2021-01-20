@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto Semanal</title>
+    <link rel = "stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="Title">Gasto Semanal</h1>
+    <div class="main">
+        <div class="container__left">
+            <h2>Añade tus gastos aquí</h2>
+            <form class="form">
+                <label>
+                    <span>Gastos:</span>
+                    <input id="gastos" class="input-gastos" type="text" name="gastos" placeholder="Nombre Gasto"/>
+                </label>
+                <label>
+                    <span>Cantidad:</span>
+                    <input id="cantidad" class="input-cantidad" type="text" name="cantidad" placeholder="Cantidad en $"/>
+                </label>
+            </form>
+            <button id="button" class="boton">Agregar</button>
+        </div>
+            <!-- ############################################################################  -->
+        <div class="container__rigth">
+            <h2>Listado</h2>
+            <div class="presupuesto">
+                <span class="subtitle">Presupuesto: </span>
+                <span class="moneda"> $</span>
+                <span id="valor-presupuesto">0</span>
+            </div>
+            <div id="restante-container" class="restante">
+                <span class="subtitle">Restante: </span>
+                <span class="moneda"> $</span>
+                <span id="valor-restante">1200</span>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
