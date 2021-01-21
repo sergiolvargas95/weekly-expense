@@ -13,7 +13,7 @@ button.addEventListener('click', getInfo =() => {  //esta pendiendo cuando ocurr
 });
 
 const mostrarGasto = (listaDeGastos, resultadoCambio) => {
-    if(resultadoCambio <= 0){
+    if(resultadoCambio < 0){
         console.log("No puedes hacer ese gasto.")
     }else{
         const $div = document.createElement('div'),
@@ -38,7 +38,7 @@ const mostrarGasto = (listaDeGastos, resultadoCambio) => {
 
 const cambioPresupuesto = ({ cantidad }) => {
     cambio = cambio - cantidad;
-    if (cambio <= 0) {
+    if (cambio < 0) {
         //cambio = 0;
         //document.getElementById("valor-restante").innerHTML = cambio.toString();
         alert("No puedes hacer este gasto")
