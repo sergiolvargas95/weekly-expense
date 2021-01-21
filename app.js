@@ -39,9 +39,7 @@ const mostrarGasto = (listaDeGastos, resultadoCambio) => {
 const cambioPresupuesto = ({ cantidad }) => {
     cambio = cambio - cantidad;
     if (cambio < 0) {
-        //cambio = 0;
-        //document.getElementById("valor-restante").innerHTML = cambio.toString();
-        alert("No puedes hacer este gasto")
+        alert("No puedes hacer este gasto");
     }else{
         document.getElementById("valor-restante").innerHTML = cambio.toString();
         colorPorcentaje(cambio);
