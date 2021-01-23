@@ -1,5 +1,5 @@
 let presupuesto = prompt('Ingreso tu presupuesto semanal');
-let cambio = presupuesto;
+let cambio = parseInt(presupuesto);
 document.getElementById("valor-presupuesto").innerHTML = presupuesto;
 document.getElementById("valor-restante").innerHTML = presupuesto;   //Cambiar elementos en el HTML
 
@@ -37,9 +37,13 @@ const mostrarGasto = (listaDeGastos, resultadoCambio) => {
 }
 
 const cambioPresupuesto = ({ cantidad }) => {
+    cantidad = parseInt(cantidad);
     cambio = cambio - cantidad;
+    console.log(cambio)
     if (cambio < 0) {
         alert("No puedes hacer este gasto");
+        cambio = cambio + cantidad;
+        console.log(cambio + ` dentro del if`)
     }else{
         document.getElementById("valor-restante").innerHTML = cambio.toString();
         colorPorcentaje(cambio);
