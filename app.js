@@ -39,16 +39,17 @@ const mostrarGasto = (listaDeGastos, resultadoCambio) => {
 const cambioPresupuesto = ({ cantidad }) => {
     cantidad = parseInt(cantidad);
     cambio = cambio - cantidad;
-    console.log(cambio)
+    console.log(cambio);
+    let cambioHecho = cambio;
     if (cambio < 0) {
         alert("No puedes hacer este gasto");
         cambio = cambio + cantidad;
         console.log(cambio + ` dentro del if`)
     }else{
         document.getElementById("valor-restante").innerHTML = cambio.toString();
-        colorPorcentaje(cambio);
+        colorPorcentaje(cambioHecho);
     }
-    return cambio;
+    return cambioHecho;
 }
 
 const colorPorcentaje = (cambio) => {
